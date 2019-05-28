@@ -1,0 +1,33 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Kelione
+@{
+    ViewData["Title"] = "Nuomoti";
+}
+
+<table class="table" style="width:30%;margin-top:4%">
+    <tbody>
+        <tr>
+            <th>Keliones Pradzios Adresas: </th>
+            <td>@Model.pradziosAdresas:</td>
+        </tr>
+        <tr>
+            <th>Keliones Pradzia: </th>
+            <td>@Model.kelionesPradzia:</td>
+        </tr>
+        <tr>
+            <th>Nuomos Kaina (€/val.):</th>
+            <td>@Model.Dviratis.nuomosKaina €</td>
+        </tr>
+        <tr>
+            <th>Nuvaziotas Atstumas:</th>
+            <td>@Model.nuvaziuotasAtstumas km.</td>
+        </tr>
+        <tr>
+            <th>Dabartine Suma:</th>
+            <td style="color:crimson"> 5 €</td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <button><a asp-action="Uzbaigti" asp-route-id="@Model.KelioneId">Baigti Kelione</a></button>
+</div>

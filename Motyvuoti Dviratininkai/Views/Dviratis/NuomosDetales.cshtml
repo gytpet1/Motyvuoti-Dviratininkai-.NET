@@ -1,0 +1,26 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Dviratis
+@{
+    ViewData["Title"] = "NuomosDetales";
+}
+
+<table class="table" style="width:30%;margin-top:4%">
+    <tbody>
+        <tr>
+            <th>Dviracio tipas</th>
+            <td>@Model.Tipas:</td>
+        </tr>
+        <tr>
+            <th>Nuomos Kaina (€/val.):</th>
+            <td>@Model.nuomosKaina</td>
+        </tr>
+        <tr>
+            <th>Nuomos Punktas:</th>
+            <td>@Model.Aikstele.Adresas</td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <button><a asp-controller="Keliones" asp-action="Nuomoti" asp-route-id="@Model.DviratisId">Patvirtinti</a></button>
+    <button> <a asp-controller="Aiksteles" asp-action="index">Atsaukti</a> </button>
+</div>

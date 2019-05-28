@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Motyvuoti_Dviratininkai.Models.Kelione>
+
+@{
+    ViewData["Title"] = "NuvaziotiKilometrai";
+    var count = 0.0;
+}
+
+@foreach (var item in Model)
+{
+    count += item.nuvaziuotasAtstumas;
+}
+<div style="color:#15965c;margin-top:20px">
+    <p><b>As nuvaziavau: </b>@count.ToString().Substring(0, 3)<b> km.</b></p>
+</div>

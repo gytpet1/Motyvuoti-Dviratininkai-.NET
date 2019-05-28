@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Motyvuoti_Dviratininkai.Models.Gedimas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.registravimoLaikas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apibudinimas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dviratis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klientas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.registravimoLaikas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apibudinimas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dviratis.DviratisId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Klientas.KlientasId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GedimasId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GedimasId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GedimasId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

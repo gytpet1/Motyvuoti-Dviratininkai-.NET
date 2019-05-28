@@ -1,0 +1,36 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Taskas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Taskas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Longtitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Longtitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Marsrutas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Marsrutas.MarsrutasId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TaskasId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

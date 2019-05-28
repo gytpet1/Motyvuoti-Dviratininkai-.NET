@@ -1,0 +1,90 @@
+﻿
+
+
+@model IEnumerable<Motyvuoti_Dviratininkai.Models.Dviratis>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 style="align-content:center">Nuomos Punktai</h2>
+
+<style>
+    /* Always set the map height explicitly to define the size of the div
+            * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 50%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+
+<div class="container-fluid" style="width:800px;height:700px">
+    <div id="map"></div>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 54.898521, lng: 23.903597 },
+                zoom: 8
+            });
+
+            @foreach (var item in Model)
+            {
+                var count = 0;
+                
+     <text>
+            var contentString = '<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>' +
+                '<h1 id="firstHeading" class="firstHeading"><b> Dviracių Sąrašas</b></h1>' +
+                '<div id="bodyContent">' +
+                    @if (item.Aikstele.Dviraciai.Count() <= 0) {
+                <text>'<p><b>Aikšteleje nera dviračių<b /></p>'+</text>
+                    }
+
+                @foreach (var i in item.Aikstele.Dviraciai)
+                {
+                    if (i.DviracioBusenaId == 1)
+                    {
+                        continue;
+                    }
+                    count++;
+                    <text>'<p> @count) <b>Busena:</b> @i.Busena.Busena, <b>Tipas: </b> @i.Tipas, <b>Nuomos Kaina:</b> @i.nuomosKaina €/Val.</p><button Style="margin-bottom:7px"><a asp-area="" asp-route-id="@i.DviratisId" asp-controller="Dviratis" asp-action="NuomosDetales">Nuomoti</a></button>'+</text>
+                        }
+                    '</div>' +
+                    '</div>';
+
+
+                    var marker = new google.maps.Marker({
+                map: map,
+                position: { lat: @item.Aikstele.Latitude, lng: @item.Aikstele.Longtitude },
+                title: 'Hello World!',
+                id: @item.AiksteleId
+
+            });
+                attachInfoWindow(marker, contentString);
+    </text>
+
+            }
+
+        }
+        function attachInfoWindow(marker, contentString) {
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            marker.addListener('click', function () {
+                infowindow.open(marker.get('map'), marker);
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXBSE-yUrDWw3iruO_e3L0EhkhixuCrJ4&callback=initMap&language=lt&region=LT"
+            async defer></script>
+</div>
+
+

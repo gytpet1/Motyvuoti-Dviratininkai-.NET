@@ -1,0 +1,54 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Dviratis
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Dviratis</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DviratisId" />
+            <div class="form-group">
+                <label asp-for="Gamintojas" class="control-label"></label>
+                <input asp-for="Gamintojas" class="form-control" />
+                <span asp-validation-for="Gamintojas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipas" class="control-label"></label>
+                <input asp-for="Tipas" class="form-control" />
+                <span asp-validation-for="Tipas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nuomosKaina" class="control-label"></label>
+                <input asp-for="nuomosKaina" class="form-control" />
+                <span asp-validation-for="nuomosKaina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DviracioBusenaId" class="control-label"></label>
+                <select asp-for="DviracioBusenaId" class="form-control" asp-items="ViewBag.DviracioBusenaId"></select>
+                <span asp-validation-for="DviracioBusenaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AiksteleId" class="control-label"></label>
+                <select asp-for="AiksteleId" class="form-control" asp-items="ViewBag.AiksteleId"></select>
+                <span asp-validation-for="AiksteleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

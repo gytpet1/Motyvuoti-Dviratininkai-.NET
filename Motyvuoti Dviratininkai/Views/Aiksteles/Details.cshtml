@@ -1,0 +1,54 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Aikstele
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Aikstele</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Adresas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.vietuSkaicius)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.vietuSkaicius)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.laisvuVietuSkacius)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.laisvuVietuSkacius)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longtitude)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Longtitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Darbuotojas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Darbuotojas.DarbuotojasId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AiksteleId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

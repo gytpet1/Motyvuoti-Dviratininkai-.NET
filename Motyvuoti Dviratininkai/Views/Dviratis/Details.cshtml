@@ -1,0 +1,48 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Dviratis
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dviratis</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Gamintojas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gamintojas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nuomosKaina)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nuomosKaina)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Busena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Busena.DviracioBusenaId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Aikstele)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Aikstele.AiksteleId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DviratisId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

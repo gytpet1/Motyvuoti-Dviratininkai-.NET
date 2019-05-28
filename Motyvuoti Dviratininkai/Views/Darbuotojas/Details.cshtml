@@ -1,0 +1,54 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Darbuotojas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Darbuotojas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.elPastas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.elPastas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Slaptazodis)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Slaptazodis)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavarde)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pavarde)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.tabelioNr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tabelioNr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pareigos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pareigos)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DarbuotojasId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

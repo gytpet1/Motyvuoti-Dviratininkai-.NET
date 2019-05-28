@@ -1,0 +1,36 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Iskvietimas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Iskvietimas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Apibudinimas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Apibudinimas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Klientas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Klientas.KlientasId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Darbuotojas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Darbuotojas.DarbuotojasId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IskvietimasId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

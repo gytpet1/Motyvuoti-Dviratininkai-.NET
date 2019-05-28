@@ -1,0 +1,30 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Pasiekimas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pasiekimas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavadinimas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pavadinimas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Kilometrai)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Kilometrai)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PasiekimasId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

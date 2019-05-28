@@ -1,0 +1,36 @@
+﻿@model Motyvuoti_Dviratininkai.Models.MokejimoKortele
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MokejimoKortele</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Numeris)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Numeris)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Savininkas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Savininkas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Klientas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Klientas.KlientasId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MokejimoKorteleId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

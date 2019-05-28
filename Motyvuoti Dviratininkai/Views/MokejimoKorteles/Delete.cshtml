@@ -1,0 +1,39 @@
+﻿@model Motyvuoti_Dviratininkai.Models.MokejimoKortele
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MokejimoKortele</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Numeris)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Numeris)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Savininkas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Savininkas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Klientas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Klientas.KlientasId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MokejimoKorteleId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Klientas
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Klientas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.elPastas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.elPastas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Slaptazodis)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Slaptazodis)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.telNumeris)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telNumeris)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavarde)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pavarde)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.KlientasId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

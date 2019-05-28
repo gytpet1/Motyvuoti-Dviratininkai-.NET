@@ -1,0 +1,44 @@
+﻿@model Motyvuoti_Dviratininkai.Models.Iskvietimas
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Iskvietimas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IskvietimasId" />
+            <div class="form-group">
+                <label asp-for="Apibudinimas" class="control-label"></label>
+                <input asp-for="Apibudinimas" class="form-control" />
+                <span asp-validation-for="Apibudinimas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KlientasId" class="control-label"></label>
+                <select asp-for="KlientasId" class="form-control" asp-items="ViewBag.KlientasId"></select>
+                <span asp-validation-for="KlientasId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DarbuotojasId" class="control-label"></label>
+                <select asp-for="DarbuotojasId" class="form-control" asp-items="ViewBag.DarbuotojasId"></select>
+                <span asp-validation-for="DarbuotojasId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
